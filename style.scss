@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+/* color */
+$color_main: #222;
+$color_sub: #ed8000;
+$color_other: #f1f1f1;
+
+//media
+$media767: 767px; // スマホタブレット用のブレイクポイント
+$media1023: 1023px; // タブレット用のブレイクポイント1
+$media1280: 1280px; // PC用のブレイクポイント2
+$media1640: 1640px; // PC用のブレイクポイント2
+
+@mixin sp {
+  @media screen and (min-width: ($media767)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (min-width: ($media1023)) {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    @content;
+  }
+}
+@mixin media1280 {
+  @media screen and (min-width: ($media1280)) {
+    @content;
+  }
+}
+@mixin media1640 {
+  @media screen and (min-width: ($media1640)) {
+    @content;
+  }
+}
+
+/* commonスタイル */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+  margin: 0;
+} /*font-size : 14px と同等*/
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+.orange {
+  color: $color_sub;
+}
+.pc {
+  display: none;
+  @include tab() {
+    display: flex;
+  }
+}
+.sp {
+  display: block;
+  @include tab() {
+    display: none;
+  }
+}
+.contents {
+  padding: 0 1.5rem;
+  @include tab() {
+    width: 1024px;
+    margin: 0 auto;
+  }
+}
+h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  @include tab() {
+    font-size: 3rem;
+  }
+}
+.sankaku {
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7px 12px 7px;
+  border-color: transparent transparent $color_sub transparent;
+}
+.btn_link {
+  display: block;
+  background-color: #222;
+  width: 80%;
+  height: 4rem;
+  line-height: 4rem;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 auto;
+  @include tab() {
+    width: 36rem;
+    height: 5rem;
+    font-size: 1.8rem;
+    line-height: 5rem;
+  }
+}
+/** header nav */
+.header {
+  background-color: white;
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  @include tab() {
+    height: 16rem;
+  }
+}
+
+/** ナビ　PC */
+.header_inner_pc {
+  align-items: center;
+  justify-content: center;
+  .nav {
+    &_inner {
+      height: 16rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        padding-right: 4rem;
+        a {
+          color: #000;
+          font-size: 1.8rem;
+          img {
+            width: 17rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/** ナビ　SP */
+.header_inner_sp {
+  position: relative;
+  h1 {
+    margin: 2rem 2rem 0;
+    width: 10rem;
+  }
+  .nav {
+    background-color: #f1f1f1;
+    position: relative;
+
+    .nav_inner {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+      margin: 0;
+      padding: 1rem 0;
+      transform: translateX(100%);
+      background-color: #fff;
+      transition: ease 0.4s;
+      &.active {
+        transform: translateX(0);
+        transition: ease-in 1s;
+      }
+      li {
+        border-bottom: 1px dashed #ddd;
+        width: 80%;
+        margin: 0 auto;
+        a {
+          color: black;
+          width: 100%;
+          display: block;
+          text-align: center;
+          font-size: 1.8rem;
+          margin: 1rem 0;
+        }
+        &:last-child {
+          border-bottom: unset;
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 2rem;
+    top: 0.3rem;
+    width: 48px;
+    background-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+    border-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+    z-index: 9999;
+
+    span {
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+      position: relative;
+      transition: ease 0.4s; /*ハンバーガーメニュークリック時の三本線の動きを遅延*/
+      display: block;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        margin: 8px 0px;
+      }
+      &:nth-child(3) {
+        top: 0;
+      }
+    }
+    &.active {
+      span {
+        &:nth-child(1) {
+          top: 5px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: -13px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
