@@ -160,10 +160,11 @@ h2 {
     width: 10rem;
   }
   .nav {
-    background-color: #222;
     position: relative;
 
     .nav_inner {
+      background-color: #222;
+
       position: absolute;
       right: 0;
       left: 0;
@@ -172,7 +173,6 @@ h2 {
       margin: 0;
       padding: 1rem 0;
       transform: translateX(100%);
-      background-color: #fff;
       transition: ease 0.4s;
       &.active {
         transform: translateX(0);
