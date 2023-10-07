@@ -269,6 +269,9 @@ h2 {
     display: flex;
     background-color: $color_sub;
     align-items: center;
+    @include tab() {
+      display: none;
+    }
     a {
       width: 50%;
       text-align: center;
