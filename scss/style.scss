@@ -243,25 +243,48 @@ h2 {
 
 /** footer */
 .footer {
+  position: relative;
   background-color: #222;
-  padding: 6rem 0 1rem;
+  padding: 6rem 0 8rem;
   text-align: center;
   color: #fff;
+  @include tab() {
+    padding: 6rem 0 1rem;
+  }
+
   &_box {
     h2 {
       margin: 0 auto;
       width: 13rem;
-      a {
-        img {
-        }
-      }
     }
-    h3 {
-    }
+
     .add {
       padding-bottom: 4rem;
     }
-    small {
+  }
+  &_sp {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background-color: $color_sub;
+    align-items: center;
+    a {
+      width: 50%;
+      text-align: center;
+      font-size: 1.6rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 5rem;
+      line-height: 5rem;
+      &:first-child {
+        border-right: 1px dashed #fff;
+      }
+      span {
+        padding-right: 1rem;
+      }
     }
   }
 }

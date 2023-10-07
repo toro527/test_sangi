@@ -434,10 +434,12 @@ main {
         &_link {
           position: relative;
           width: 100%;
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           background-color: $color_sub;
           height: 4rem;
-          line-height: 4rem;
+          line-height: 1rem;
           color: #fff;
           text-align: center;
           font-size: 1.6rem;
@@ -449,18 +451,15 @@ main {
             margin: 0 auto;
           }
           &:last-child {
+            font-size: 2rem;
             margin: 0 auto;
           }
-          .sankaku {
-            transform: rotate(0);
-            border-width: 4px 0 4px 7px;
-            border-color: transparent transparent transparent #fff;
-            top: 1.8rem;
-            left: 11rem;
-            @include tab() {
-              border-width: 7px 0 7px 12px;
-              left: 15rem;
-              top: 2rem;
+          .material-symbols-outlined {
+            padding-right: 1rem;
+            font-size: 2rem;
+            :before {
+              font-family: "Material Icons";
+              content: "e0b0";
             }
           }
         }
