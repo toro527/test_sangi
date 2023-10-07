@@ -55,6 +55,9 @@ ul {
 img {
   width: 100%;
 }
+figure {
+  margin: 0;
+}
 .orange {
   color: $color_sub;
 }
@@ -78,7 +81,7 @@ img {
   }
 }
 h2 {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: bold;
   @include tab() {
     font-size: 3rem;
@@ -234,6 +237,31 @@ h2 {
           transform: rotate(-45deg);
         }
       }
+    }
+  }
+}
+
+/** footer */
+.footer {
+  background-color: #222;
+  padding: 6rem 0 1rem;
+  text-align: center;
+  color: #fff;
+  &_box {
+    h2 {
+      margin: 0 auto;
+      width: 13rem;
+      a {
+        img {
+        }
+      }
+    }
+    h3 {
+    }
+    .add {
+      padding-bottom: 4rem;
+    }
+    small {
     }
   }
 }
