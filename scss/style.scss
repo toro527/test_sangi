@@ -34,8 +34,9 @@ $media1640: 1640px; // PC用のブレイクポイント2
 }
 
 /* commonスタイル */
-html {
+html[lang="ja"] {
   font-size: 62.5%;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 body {
   font-size: 1.4rem;
