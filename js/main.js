@@ -4,3 +4,37 @@ ham.on("click", function () {
   ham.toggleClass("active"); // ハンバーガーメニューにactiveクラスを付け外し
   nav.toggleClass("active"); // ナビゲーションメニューにactiveクラスを付け外し
 });
+
+/*** inviuw */
+$(function () {
+  $(".js-fade").on("inview", function () {
+    $(this).addClass("inview");
+  });
+});
+// 下からフェードイン用
+$(function () {
+  $(".js-fadeBottom").on("inview", function () {
+    $(this).addClass("inview");
+  });
+});
+
+// 上からフェードイン用
+$(function () {
+  $(".js-fadeTop").on("inview", function () {
+    $(this).addClass("inview");
+  });
+});
+
+// 左からフェードイン用
+$(function () {
+  $(".js-fadeLeft").on("inview", function () {
+    $(this).addClass("inview");
+  });
+});
+
+// 右からフェードイン用
+$(function () {
+  $(".js-fadeRight").on("inview", function () {
+    $(this).addClass("inview");
+  });
+});

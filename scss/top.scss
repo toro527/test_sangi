@@ -36,6 +36,7 @@ main {
     .contact {
       display: none;
       @include tab() {
+        display: block;
         position: absolute;
         bottom: 7%;
         right: 3rem;

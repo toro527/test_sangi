@@ -291,3 +291,70 @@ h2 {
     }
   }
 }
+
+/** inview **/
+
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 2s, visibility 2s, transform 2s;
+}
+
+.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+// 下からフェードイン
+.js-fadeBottom {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(80px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.js-fadeBottom.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+// 上からフェードイン
+.js-fadeTop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-80px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.js-fadeTop.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+// 左からフェードイン
+.js-fadeLeft {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(80px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.js-fadeLeft.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+// 右からフェードイン
+.js-fadeRight {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-80px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.js-fadeRight.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
