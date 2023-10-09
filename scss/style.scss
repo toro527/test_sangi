@@ -8,7 +8,7 @@ $color_other: #f1f1f1;
 //media
 $media767: 767px; // スマホタブレット用のブレイクポイント
 $media1023: 1023px; // タブレット用のブレイクポイント1
-$media1280: 1280px; // PC用のブレイクポイント2
+$media1280: 1250px; // PC用のブレイクポイント2
 $media1640: 1640px; // PC用のブレイクポイント2
 
 @mixin sp {
@@ -113,6 +113,9 @@ h2 {
     line-height: 5rem;
   }
 }
+.now {
+  text-decoration: underline;
+}
 /** header nav */
 .header {
   background-color: white;
@@ -176,7 +179,7 @@ h2 {
       transition: ease 0.4s;
       &.active {
         transform: translateX(0);
-        transition: ease-in 1s;
+        transition: ease-in 1.5s;
       }
       li {
         border-bottom: 1px dashed #ddd;
@@ -291,14 +294,27 @@ h2 {
     }
   }
 }
-
+/**パンくず***/
+.breadcrumb {
+  width: 100%;
+  background-color: $color_sub;
+  color: #fff;
+  height: 3rem;
+  line-height: 3rem;
+  @include tab() {
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
 /** inview **/
 
 .js-fade {
   opacity: 0;
   visibility: hidden;
   transform: translateY(50px);
-  transition: opacity 2s, visibility 2s, transform 2s;
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
 }
 
 .inview {
@@ -311,8 +327,8 @@ h2 {
 .js-fadeBottom {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(80px);
-  transition: opacity 1s, visibility 1s, transform 1s;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
 }
 .js-fadeBottom.inview {
   opacity: 1;
@@ -324,8 +340,8 @@ h2 {
 .js-fadeTop {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-80px);
-  transition: opacity 1s, visibility 1s, transform 1s;
+  transform: translateY(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
 }
 .js-fadeTop.inview {
   opacity: 1;
@@ -337,8 +353,8 @@ h2 {
 .js-fadeLeft {
   opacity: 0;
   visibility: hidden;
-  transform: translateX(80px);
-  transition: opacity 1s, visibility 1s, transform 1s;
+  transform: translateX(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
 }
 .js-fadeLeft.inview {
   opacity: 1;
@@ -350,11 +366,19 @@ h2 {
 .js-fadeRight {
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-80px);
-  transition: opacity 1s, visibility 1s, transform 1s;
+  transform: translateX(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
 }
 .js-fadeRight.inview {
   opacity: 1;
   visibility: visible;
   transform: translateX(0px);
+}
+
+/**パララックス*/
+.parallax1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
 }
