@@ -1,0 +1,310 @@
+@charset "UTF-8";
+
+@import "style";
+
+/* company */
+
+.staff {
+  width: 100%;
+  margin-top: 7rem;
+
+  .mv {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../images/common/company_head.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    height: 20vh;
+    z-index: 1;
+    opacity: 0.6;
+    @include tab() {
+      height: 45vh;
+      background-image: url("../images/common/company_head.jpg");
+    }
+    h2 {
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      color: #fff;
+      @include tab() {
+        top: 50%;
+        left: 15%;
+      }
+      .sankaku {
+        top: -1rem;
+      }
+    }
+  }
+  .members {
+    padding: 0.1.5rem;
+    width: 100%;
+    padding: 5rem 0;
+    @include tab() {
+      padding: 10rem 0;
+    }
+
+    .contents {
+      @include tab() {
+      }
+      h2 {
+        position: relative;
+        margin: 0 0 0 2rem;
+        @include tab() {
+          margin: 0 0 4rem 0;
+        }
+        .sankaku {
+          top: -1rem;
+          left: -2rem;
+          @include tab() {
+            top: -2rem;
+            left: -1rem;
+          }
+        }
+      }
+      h3 {
+        margin: 1.5rem 0 1rem;
+        padding-left: 1rem;
+        border-left: 4px solid $color_sub;
+        font-size: 1.8rem;
+
+        @include tab() {
+          font-size: 2rem;
+        }
+      }
+      .members_box {
+        padding-bottom: 5rem;
+        @include tab() {
+          padding-bottom: 15rem;
+        }
+        &_item {
+          display: flex;
+          flex-direction: column;
+          @include tab() {
+            flex-direction: row;
+            gap: 5rem;
+          }
+          figure {
+            @include tab() {
+              width: 50%;
+              order: 1;
+            }
+            figcaption {
+              text-align: center;
+              font-family: serif;
+              font-size: 2rem;
+              padding-top: 1rem;
+            }
+          }
+          ul {
+            @include tab() {
+              width: 50%;
+              order: 2;
+            }
+            margin: 0;
+            li {
+              .text {
+                padding-left: 1.5rem;
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+        .message_btm {
+          margin: 2rem auto;
+          @include tab() {
+            width: 70%;
+          }
+        }
+        &:nth-child(even) {
+          .members_box_item {
+            figure {
+              @include tab() {
+                width: 50%;
+                order: 2;
+              }
+            }
+            ul {
+              @include tab() {
+                width: 50%;
+                order: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 3rem 0;
+    @include tab() {
+      padding: 5rem 0;
+    }
+    h2 {
+      position: relative;
+      text-align: center;
+      @include tab() {
+      }
+      .sankaku {
+        top: -1rem;
+        left: -2rem;
+        @include tab() {
+          top: -2rem;
+          left: 49%;
+        }
+      }
+    }
+    .info-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 1rem 0;
+      @include tab() {
+        width: 80%;
+        flex-direction: row;
+        font-size: 1.5rem;
+      }
+      &-item {
+        padding: 1rem;
+        @include tab() {
+          padding: 1.5rem;
+        }
+      }
+      &-item:first-child {
+        font-weight: bold;
+        border-bottom: 1px solid $color_sub;
+        margin: 1rem;
+
+        @include tab() {
+          width: 20%;
+        }
+      }
+      &-item:nth-child(2) {
+        border-bottom: 1px solid #000;
+        margin: 1rem;
+        @include tab() {
+          width: 75%;
+        }
+      }
+    }
+  }
+
+  .photos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem 0;
+    @include tab() {
+      width: 80%;
+      flex-direction: row;
+      gap: 3rem;
+    }
+  }
+  .access {
+    padding: 3rem 0 0;
+    @include tab() {
+      padding: 5rem 0 0;
+    }
+    h2 {
+      position: relative;
+      text-align: center;
+      @include tab() {
+      }
+      .sankaku {
+        top: -1rem;
+        left: -2rem;
+        @include tab() {
+          top: -2rem;
+          left: 49%;
+        }
+      }
+    }
+    iframe {
+      width: 100%;
+      height: 40rem;
+    }
+  }
+  .contact_us {
+    background-color: #f7f6f2;
+    padding: 5rem 0;
+    @include tab() {
+      padding: 10rem 0;
+    }
+    .contents {
+      @include tab() {
+      }
+      h2 {
+        position: relative;
+        margin: 0 0 0 2rem;
+        @include tab() {
+          text-align: center;
+        }
+
+        .sankaku {
+          transform: rotate(0);
+          border-width: 7px 0 7px 12px;
+          border-color: transparent transparent transparent $color_sub;
+          top: 1rem;
+          left: -2rem;
+          @include tab() {
+            left: 26rem;
+            top: 1.7rem;
+          }
+        }
+      }
+      p {
+        font-size: 1.8rem;
+        padding-bottom: 2rem;
+        @include tab() {
+          padding-bottom: 5rem;
+
+          text-align: center;
+          font-size: 2rem;
+        }
+      }
+      .contact_btns {
+        display: flex;
+        flex-direction: column;
+        @include tab() {
+          flex-direction: row;
+          gap: 0 10rem;
+        }
+        &_link {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $color_sub;
+          height: 4rem;
+          line-height: 1rem;
+          color: #fff;
+          text-align: center;
+          font-size: 1.6rem;
+          margin: 0 auto 2rem;
+          @include tab() {
+            height: 5rem;
+            font-size: 1.8rem;
+            line-height: 5rem;
+            margin: 0 auto;
+          }
+          &:last-child {
+            font-size: 2rem;
+            margin: 0 auto;
+          }
+          .material-symbols-outlined {
+            padding-right: 1rem;
+            font-size: 2rem;
+            :before {
+              font-family: "Material Icons";
+              content: "e0b0";
+            }
+          }
+        }
+      }
+    }
+  }
+}
