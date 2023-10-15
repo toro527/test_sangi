@@ -11,16 +11,16 @@
   .mv {
     position: relative;
     overflow: hidden;
-    background-image: url("../images/common/company_head.jpg");
+    background-image: url("https://www.sangi.ac.jp/assets/img/outline/pt_bg.jpg");
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: 100%;
     height: 20vh;
     z-index: 1;
     opacity: 0.6;
     @include tab() {
       height: 45vh;
-      background-image: url("../images/common/company_head.jpg");
+      background-image: url("https://www.sangi.ac.jp/assets/img/outline/pt_bg.jpg");
     }
     h2 {
       position: absolute;
