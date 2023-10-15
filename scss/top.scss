@@ -11,15 +11,16 @@ main {
   .mv {
     position: relative;
     overflow: hidden;
-    background-image: url("../images/top/main_sp.jpg");
+    background-image: url("https://thumb.photo-ac.com/8e/8e83f1006151c092e32aa1fabfd6aff4_w.jpeg");
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
-    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
     z-index: 1;
     @include tab() {
+      background-size: 100%;
       height: 90vh;
-      background-image: url("../images/top/main_pc.jpg");
+      background-image: url("https://thumb.photo-ac.com/8e/8e83f1006151c092e32aa1fabfd6aff4_w.jpeg");
     }
     h2 {
       position: absolute;
@@ -40,7 +41,7 @@ main {
         position: absolute;
         bottom: 7%;
         right: 3rem;
-        background-color: $color_sub;
+        background-color: #222;
         color: #fff;
         padding: 1rem 0;
         width: 25rem;
@@ -54,6 +55,12 @@ main {
           font-size: 1.4rem;
         }
       }
+    }
+  }
+  .slider {
+    padding: 0;
+    @include tab() {
+      padding: 3rem 0;
     }
   }
   .work {
