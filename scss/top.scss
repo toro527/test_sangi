@@ -104,6 +104,42 @@ main {
       }
     }
   }
+  .info {
+    padding-bottom: 50px;
+    .contents {
+      h2 {
+      }
+      ul {
+        border: orange 1px solid;
+        padding: 30px;
+        li {
+          border-bottom: #ccc dashed 1px;
+          a {
+            color: #888;
+            font-size: 16px;
+            p {
+              .tag {
+                background-color: red;
+                color: #fff;
+                text-align: center;
+                border-radius: 5px;
+                padding: 0 5px;
+                margin-right: 10px;
+                font-size: 12px;
+              }
+              .date {
+                font-size: 14px;
+                margin-right: 10px;
+              }
+            }
+          }
+          &:last-child {
+            border-bottom: unset;
+          }
+        }
+      }
+    }
+  }
   .strength {
     z-index: 1;
     position: relative;
