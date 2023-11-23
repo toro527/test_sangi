@@ -314,6 +314,85 @@
             </div>
           </div>
         </section>
+
+        <section id="form">
+          <div class="contents form js-fade">
+            <h2><span class="sankaku"></span>お問い合わせフォーム</h2>
+
+            <div class="form-box">
+              <div class="form-box-item">お名前<span>必須</span></div>
+              <div class="form-box-item">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  maxlength="30"
+                  placeholder="山田　たろう"
+                />
+              </div>
+            </div>
+
+            <div class="form-box">
+              <div class="form-box-item">電話番号<span>必須</span></div>
+              <div class="form-box-item">
+                <input
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  required
+                  maxlength="11"
+                  placeholder="01234567890
+                "
+                />
+              </div>
+            </div>
+            <div class="form-box">
+              <div class="form-box-item">メールアドレス<span>必須</span></div>
+              <div class="form-box-item">
+                <input
+                  type="email"
+                  id="email"
+                  pattern=".+@example\.com"
+                  size="30"
+                  required
+                  placeholder="exmple@abc.com"
+                />
+              </div>
+            </div>
+            <div class="form-box">
+              <div class="form-box-item">
+                どのサイトで知りましたか<span>必須</span>
+              </div>
+              <div class="form-box-item">
+                <label for="x"
+                  >Twitter(x)<input type="checkbox" id="x" name="x" checked
+                /></label>
+
+                <label for="insta"
+                  >Instagram<input type="checkbox" id="insta" name="insta"
+                /></label>
+                <label for="facebook"
+                  >facebook<input type="checkbox" id="facebook" name="facebook"
+                /></label>
+              </div>
+            </div>
+            <div class="form-box">
+              <div class="form-box-item">お問い合わせ内容<span>必須</span></div>
+              <div class="form-box-item">
+                <textarea
+                  id="naiyo"
+                  name="naiyo"
+                  rows="5"
+                  placeholder="お問い合わせ内容"
+                ></textarea>
+              </div>
+            </div>
+            <div class="submit">
+              <input type="submit" value="内容を確認する" />
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
         <div class="footer_box">
