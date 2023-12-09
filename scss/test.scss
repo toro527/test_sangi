@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+@import "style";
+
+/* min(top) */
+
+main {
+  width: 100%;
+  margin-top: 7rem;
+
+  .mv {
+    position: relative;
+    overflow: hidden;
+    background-image: url("https://thumb.photo-ac.com/8e/8e83f1006151c092e32aa1fabfd6aff4_w.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    z-index: 1;
+    @include tab() {
+      background-size: 100%;
+      height: 90vh;
+      background-image: url("https://thumb.photo-ac.com/8e/8e83f1006151c092e32aa1fabfd6aff4_w.jpeg");
+    }
+    h2 {
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      color: #fff;
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      @include tab() {
+        top: 30%;
+        left: 15%;
+      }
+    }
+    .contact {
+      display: none;
+      @include tab() {
+        display: block;
+        position: absolute;
+        bottom: 7%;
+        right: 3rem;
+        background-color: #222;
+        color: #fff;
+        padding: 1rem 0;
+        width: 25rem;
+        text-align: center;
+      }
+      &_box {
+        letter-spacing: 2px;
+        line-height: 2.2rem;
+        font-size: 2rem;
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  .slider {
+    padding: 0;
+    @include tab() {
+      padding: 3rem 0;
+    }
+  }
+  .blog {
+    padding: 0 0 5rem;
+    @include tab() {
+      padding: 0 0 15rem 0;
+    }
+    .contents {
+      @include tab() {
+      }
+      h2 {
+        position: relative;
+        margin: 0 0 3rem 2rem;
+        @include tab() {
+          text-align: center;
+          margin: 0 auto 4.5rem;
+        }
+
+        .sankaku {
+          top: -1rem;
+          left: -2rem;
+          @include tab() {
+            left: 50%;
+            top: -2rem;
+          }
+        }
+      }
+      ul {
+        padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        @include tab() {
+          padding-bottom: 9rem;
+          flex-direction: row;
+          gap: 3rem;
+        }
+        li {
+          @include tab() {
+            width: 30%;
+          }
+          a {
+            figure {
+              overflow: hidden;
+              max-height: 20rem;
+              @include tab() {
+                max-height: 24rem;
+              }
+              img {
+                object-fit: cover;
+                object-position: center;
+              }
+            }
+            .blog_box {
+              padding: 1rem 0;
+              .date {
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: #bbb;
+                @include tab() {
+                  font-size: 1.6rem;
+                }
+              }
+              h3 {
+                margin: 0 0 1rem;
+                color: $color_sub;
+                font-weight: bold;
+                font-size: 1.8rem;
+                @include tab() {
+                  font-size: 2.2rem;
+                }
+              }
+              p {
+                margin: 0;
+                color: #222;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .contact_us {
+    background-color: #f7f6f2;
+    padding: 5rem 0;
+    @include tab() {
+      padding: 15rem 0;
+    }
+    .contents {
+      @include tab() {
+      }
+      h2 {
+        position: relative;
+        margin: 0 0 0 2rem;
+        @include tab() {
+          text-align: center;
+        }
+
+        .sankaku {
+          transform: rotate(0);
+          border-width: 7px 0 7px 12px;
+          border-color: transparent transparent transparent $color_sub;
+          top: 1rem;
+          left: -2rem;
+          @include tab() {
+            left: 26rem;
+            top: 1.7rem;
+          }
+        }
+      }
+      p {
+        font-size: 1.8rem;
+        padding-bottom: 2rem;
+        @include tab() {
+          padding-bottom: 5rem;
+
+          text-align: center;
+          font-size: 2rem;
+        }
+      }
+      .contact_btns {
+        display: flex;
+        flex-direction: column;
+        @include tab() {
+          flex-direction: row;
+          gap: 0 10rem;
+        }
+        &_link {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $color_sub;
+          height: 4rem;
+          line-height: 1rem;
+          color: #fff;
+          text-align: center;
+          font-size: 1.6rem;
+          margin: 0 auto 2rem;
+          @include tab() {
+            height: 5rem;
+            font-size: 1.8rem;
+            line-height: 5rem;
+            margin: 0 auto;
+          }
+          &:last-child {
+            font-size: 2rem;
+            margin: 0 auto;
+          }
+          .material-symbols-outlined {
+            padding-right: 1rem;
+            font-size: 2rem;
+            :before {
+              font-family: "Material Icons";
+              content: "e0b0";
+            }
+          }
+        }
+      }
+    }
+  }
+}

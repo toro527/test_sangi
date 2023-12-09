@@ -1,0 +1,750 @@
+@charset "UTF-8";
+/* color */
+/* commonスタイル */
+html[lang=ja] {
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+body {
+  font-size: 1.4rem;
+  margin: 0;
+} /*font-size : 14px と同等*/
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+.orange {
+  color: #ed8000;
+}
+
+.pc {
+  display: none;
+}
+@media screen and (min-width: 1023px) {
+  .pc {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    display: flex;
+  }
+}
+
+.sp {
+  display: block;
+}
+@media screen and (min-width: 1023px) {
+  .sp {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    display: none;
+  }
+}
+
+.contents {
+  padding: 0 1.5rem;
+}
+@media screen and (min-width: 1023px) {
+  .contents {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+h2 {
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 1023px) {
+  h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 3rem;
+  }
+}
+
+.sankaku {
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7px 12px 7px;
+  border-color: transparent transparent #ed8000 transparent;
+}
+
+.btn_link {
+  display: block;
+  background-color: #222;
+  width: 80%;
+  height: 4rem;
+  line-height: 4rem;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1023px) {
+  .btn_link {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 36rem;
+    height: 5rem;
+    font-size: 1.8rem;
+    line-height: 5rem;
+  }
+}
+
+.now {
+  text-decoration: underline;
+}
+
+/** header nav */
+.header {
+  background-color: white;
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+@media screen and (min-width: 1023px) {
+  .header {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    height: 16rem;
+  }
+}
+
+/** ナビ　PC */
+.header_inner_pc {
+  align-items: center;
+  justify-content: center;
+}
+.header_inner_pc .nav_inner {
+  height: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_inner_pc .nav_inner li {
+  padding-right: 4rem;
+}
+.header_inner_pc .nav_inner li a {
+  color: #000;
+  font-size: 1.8rem;
+}
+.header_inner_pc .nav_inner li a img {
+  width: 17rem;
+}
+
+/** ナビ　SP */
+.header_inner_sp {
+  position: relative;
+}
+.header_inner_sp h1 {
+  margin: 2rem 2rem 0;
+  width: 10rem;
+}
+.header_inner_sp .nav {
+  position: relative;
+}
+.header_inner_sp .nav .nav_inner {
+  background-color: #222;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0;
+  transform: translateX(100%);
+  transition: ease 0.4s;
+}
+.header_inner_sp .nav .nav_inner.active {
+  transform: translateX(0);
+  transition: ease-in 1.5s;
+}
+.header_inner_sp .nav .nav_inner li {
+  border-bottom: 1px dashed #ddd;
+  width: 80%;
+  margin: 0 auto;
+}
+.header_inner_sp .nav .nav_inner li a {
+  color: #fff;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+.header_inner_sp .nav .nav_inner li:last-child {
+  border-bottom: unset;
+}
+.header_inner_sp .hamburger {
+  position: absolute;
+  right: 2rem;
+  top: 0.3rem;
+  width: 48px;
+  background-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+  border-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+  z-index: 9999;
+}
+.header_inner_sp .hamburger span {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  position: relative;
+  transition: ease 0.4s; /*ハンバーガーメニュークリック時の三本線の動きを遅延*/
+  display: block;
+}
+.header_inner_sp .hamburger span:nth-child(1) {
+  top: 0;
+}
+.header_inner_sp .hamburger span:nth-child(2) {
+  margin: 8px 0px;
+}
+.header_inner_sp .hamburger span:nth-child(3) {
+  top: 0;
+}
+.header_inner_sp .hamburger.active span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+.header_inner_sp .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header_inner_sp .hamburger.active span:nth-child(3) {
+  top: -13px;
+  transform: rotate(-45deg);
+}
+
+/** footer */
+.footer {
+  position: relative;
+  background-color: #222;
+  padding: 6rem 0 8rem;
+  text-align: center;
+  color: #fff;
+}
+@media screen and (min-width: 1023px) {
+  .footer {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 6rem 0 1rem;
+  }
+}
+.footer_box h2 {
+  margin: 0 auto;
+  width: 13rem;
+}
+.footer_box .add {
+  padding-bottom: 4rem;
+}
+.footer_sp {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color: #ed8000;
+  align-items: center;
+}
+@media screen and (min-width: 1023px) {
+  .footer_sp {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    display: none;
+  }
+}
+.footer_sp a {
+  width: 50%;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  line-height: 5rem;
+}
+.footer_sp a:first-child {
+  border-right: 1px dashed #fff;
+}
+.footer_sp a span {
+  padding-right: 1rem;
+}
+
+/**パンくず***/
+.breadcrumb {
+  width: 100%;
+  background-color: #ed8000;
+  color: #fff;
+  height: 3rem;
+  line-height: 3rem;
+}
+@media screen and (min-width: 1023px) {
+  .breadcrumb {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+.breadcrumb a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/** inview **/
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.js-fadeBottom {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeBottom.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.js-fadeTop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeTop.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.js-fadeLeft {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeLeft.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+.js-fadeRight {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeRight.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+/**パララックス*/
+.parallax1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+/** slider**/
+.slider-2 .slick-slide {
+  width: 600px;
+  max-height: 25rem;
+  margin: 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 1023px) {
+  .slider-2 .slick-slide {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 600px;
+    height: 400px;
+    margin: 0 40px;
+  }
+}
+.slider-2 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slick-arrow {
+  visibility: hidden;
+}
+@media screen and (min-width: 1023px) {
+  .slick-arrow {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 0;
+    position: absolute;
+    top: 180px;
+    z-index: 1;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+  }
+}
+.slick-arrow:before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #09000d;
+  border-width: 3px 3px 0 0;
+  position: absolute;
+  top: 24px;
+  transform: rotate(45deg);
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next::before {
+  left: 20px;
+}
+
+.slick-prev::before {
+  border-width: 0 0 3px 3px;
+  right: 22px;
+}
+
+.dots-2 .slick-dots {
+  text-align: center;
+}
+
+.dots-2 .slick-dots li {
+  display: inline-block;
+}
+
+.dots-2 .slick-dots button {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 6px;
+  font-size: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  background: #bcbcbc;
+  border-radius: 50%;
+}
+
+.dots-2 .slick-dots .slick-active button {
+  background: #0a467d;
+}
+
+/* min(top) */
+main {
+  width: 100%;
+  margin-top: 7rem;
+}
+main .mv {
+  position: relative;
+  overflow: hidden;
+  background-image: url("https://thumb.photo-ac.com/8e/8e83f1006151c092e32aa1fabfd6aff4_w.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  z-index: 1;
+}
+@media screen and (min-width: 1023px) {
+  main .mv {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    background-size: 100%;
+    height: 90vh;
+    background-image: url("https://thumb.photo-ac.com/8e/8e83f1006151c092e32aa1fabfd6aff4_w.jpeg");
+  }
+}
+main .mv h2 {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  color: #fff;
+  writing-mode: vertical-rl;
+}
+@media screen and (min-width: 1023px) {
+  main .mv h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    top: 30%;
+    left: 15%;
+  }
+}
+main .mv .contact {
+  display: none;
+}
+@media screen and (min-width: 1023px) {
+  main .mv .contact {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    display: block;
+    position: absolute;
+    bottom: 7%;
+    right: 3rem;
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    width: 25rem;
+    text-align: center;
+  }
+}
+main .mv .contact_box {
+  letter-spacing: 2px;
+  line-height: 2.2rem;
+  font-size: 2rem;
+}
+main .mv .contact_box span {
+  font-size: 1.4rem;
+}
+main .slider {
+  padding: 0;
+}
+@media screen and (min-width: 1023px) {
+  main .slider {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 3rem 0;
+  }
+}
+main .blog {
+  padding: 0 0 5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .blog {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 0 0 15rem 0;
+  }
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+main .blog .contents h2 {
+  position: relative;
+  margin: 0 0 3rem 2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: center;
+    margin: 0 auto 4.5rem;
+  }
+}
+main .blog .contents h2 .sankaku {
+  top: -1rem;
+  left: -2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents h2 .sankaku {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    left: 50%;
+    top: -2rem;
+  }
+}
+main .blog .contents ul {
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents ul {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding-bottom: 9rem;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents ul li {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 30%;
+  }
+}
+main .blog .contents ul li a figure {
+  overflow: hidden;
+  max-height: 20rem;
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents ul li a figure {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    max-height: 24rem;
+  }
+}
+main .blog .contents ul li a figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main .blog .contents ul li a .blog_box {
+  padding: 1rem 0;
+}
+main .blog .contents ul li a .blog_box .date {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #bbb;
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents ul li a .blog_box .date {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 1.6rem;
+  }
+}
+main .blog .contents ul li a .blog_box h3 {
+  margin: 0 0 1rem;
+  color: #ed8000;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+@media screen and (min-width: 1023px) {
+  main .blog .contents ul li a .blog_box h3 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 2.2rem;
+  }
+}
+main .blog .contents ul li a .blog_box p {
+  margin: 0;
+  color: #222;
+}
+main .contact_us {
+  background-color: #f7f6f2;
+  padding: 5rem 0;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 15rem 0;
+  }
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us .contents {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+main .contact_us .contents h2 {
+  position: relative;
+  margin: 0 0 0 2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us .contents h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: center;
+  }
+}
+main .contact_us .contents h2 .sankaku {
+  transform: rotate(0);
+  border-width: 7px 0 7px 12px;
+  border-color: transparent transparent transparent #ed8000;
+  top: 1rem;
+  left: -2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us .contents h2 .sankaku {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    left: 26rem;
+    top: 1.7rem;
+  }
+}
+main .contact_us .contents p {
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us .contents p {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding-bottom: 5rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+main .contact_us .contents .contact_btns {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us .contents .contact_btns {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    flex-direction: row;
+    gap: 0 10rem;
+  }
+}
+main .contact_us .contents .contact_btns_link {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ed8000;
+  height: 4rem;
+  line-height: 1rem;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 auto 2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us .contents .contact_btns_link {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    height: 5rem;
+    font-size: 1.8rem;
+    line-height: 5rem;
+    margin: 0 auto;
+  }
+}
+main .contact_us .contents .contact_btns_link:last-child {
+  font-size: 2rem;
+  margin: 0 auto;
+}
+main .contact_us .contents .contact_btns_link .material-symbols-outlined {
+  padding-right: 1rem;
+  font-size: 2rem;
+}
+main .contact_us .contents .contact_btns_link .material-symbols-outlined :before {
+  font-family: "Material Icons";
+  content: "e0b0";
+}/*# sourceMappingURL=test.css.map */
